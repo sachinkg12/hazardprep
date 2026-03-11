@@ -17,13 +17,14 @@
 - [x] README, CONTRIBUTING, LICENSE (MIT)
 
 ## Phase 2: Web Dashboard
-- [ ] Create Next.js app (`apps/web`)
-- [ ] Landing page with address input + autocomplete
-- [ ] API route wrapping `@myhazardprofile/core`
-- [ ] Risk profile results page (composite score, per-hazard breakdown)
-- [ ] Interactive map with hazard zone visualization (Leaflet)
-- [ ] Risk gauge / chart components
-- [ ] Mobile-responsive design
+- [x] Create Next.js app (`apps/web`)
+- [x] Landing page with address input + example addresses
+- [x] API route wrapping `@myhazardprofile/core`
+- [x] Risk profile results page (composite score, per-hazard breakdown)
+- [x] Interactive map with hazard zone visualization (Leaflet + OpenStreetMap)
+- [x] Risk gauge / chart components (circular gauge + score bars)
+- [x] Personalized preparation checklist with priority levels
+- [x] Mobile-responsive design (Tailwind CSS)
 - [ ] Deploy to Vercel
 
 ## Phase 3: Polish & Publish
