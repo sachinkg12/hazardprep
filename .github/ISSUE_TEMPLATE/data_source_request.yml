@@ -1,0 +1,39 @@
+name: New Data Source
+description: Suggest a new hazard data source to integrate
+labels: ["data-source", "enhancement"]
+body:
+  - type: input
+    id: source-name
+    attributes:
+      label: Data source name
+      placeholder: "e.g., USDA Drought Monitor"
+    validations:
+      required: true
+  - type: input
+    id: source-url
+    attributes:
+      label: API or data URL
+      placeholder: "https://..."
+    validations:
+      required: true
+  - type: dropdown
+    id: hazard-type
+    attributes:
+      label: Hazard type
+      options:
+        - Flood
+        - Earthquake
+        - Wildfire
+        - Hurricane
+        - Tornado
+        - Drought
+        - Winter Storm
+        - Heatwave
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Additional details
+      placeholder: Is an API key required? What data format? Coverage area?
