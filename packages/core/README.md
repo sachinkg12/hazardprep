@@ -1,4 +1,4 @@
-# @myhazardprofile/core
+# @hazura/core
 
 Multi-hazard personal risk assessment engine using federal open data (FEMA, USGS, NOAA).
 
@@ -7,13 +7,13 @@ Enter any US address and get a composite risk profile covering floods, earthquak
 ## Install
 
 ```bash
-npm install @myhazardprofile/core
+npm install @hazura/core
 ```
 
 ## Quick Start
 
 ```typescript
-import { HazardScorer } from '@myhazardprofile/core';
+import { HazardScorer } from '@hazura/core';
 
 const scorer = new HazardScorer();
 const profile = await scorer.assess('1600 Pennsylvania Ave, Washington, DC');
@@ -42,8 +42,8 @@ No API keys required.
 Extend `BaseProvider` to add your own data source:
 
 ```typescript
-import { BaseProvider, HazardType, scoreToLevel } from '@myhazardprofile/core';
-import type { HazardScore, Location } from '@myhazardprofile/core';
+import { BaseProvider, HazardType, scoreToLevel } from '@hazura/core';
+import type { HazardScore, Location } from '@hazura/core';
 
 class MyCustomProvider extends BaseProvider {
   readonly id = 'my-provider';

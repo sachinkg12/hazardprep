@@ -1,5 +1,5 @@
 {
-  "name": "@myhazardprofile/core",
+  "name": "@hazura/core",
   "version": "0.1.0",
   "description": "Multi-hazard personal risk assessment engine using federal open data (FEMA, USGS, NOAA)",
   "keywords": [

@@ -1,7 +1,7 @@
 # Hazura
 
 [![CI](https://github.com/sachinkg12/hazura/actions/workflows/ci.yml/badge.svg)](https://github.com/sachinkg12/hazura/actions/workflows/ci.yml)
-[![npm](https://img.shields.io/npm/v/@myhazardprofile/core)](https://www.npmjs.com/package/@myhazardprofile/core)
+[![npm](https://img.shields.io/npm/v/@hazura/core)](https://www.npmjs.com/package/@hazura/core)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 
 **Know your risk. Be prepared.**
@@ -42,11 +42,11 @@ Address Input → Geocoding → Parallel Data Fetch → Composite Scoring → Ri
 ### Use the Library
 
 ```bash
-npm install @myhazardprofile/core
+npm install @hazura/core
 ```
 
 ```typescript
-import { HazardScorer } from '@myhazardprofile/core';
+import { HazardScorer } from '@hazura/core';
 
 const scorer = new HazardScorer();
 const profile = await scorer.assess('742 Evergreen Terrace, Springfield, IL');
@@ -72,7 +72,7 @@ Open [http://localhost:3000](http://localhost:3000)
 ```
 hazura/
 ├── packages/
-│   └── core/           # @myhazardprofile/core — standalone scoring engine (npm)
+│   └── core/           # @hazura/core — standalone scoring engine (npm)
 ├── apps/
 │   └── web/            # Next.js dashboard — visual risk assessment
 └── docs/               # Methodology & architecture docs

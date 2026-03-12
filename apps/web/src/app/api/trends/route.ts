@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { geocodeAddress } from '@myhazardprofile/core';
+import { geocodeAddress } from '@hazura/core';
 
 interface FemaDeclaration {
   incidentType: string;

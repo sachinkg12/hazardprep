@@ -280,7 +280,7 @@ export default function AboutPage() {
           <h2 className="text-2xl font-bold mb-4">Open Source</h2>
           <p className="text-gray-700 leading-relaxed mb-4">
             The scoring engine is available as a standalone npm package:{' '}
-            <code className="bg-gray-100 px-2 py-0.5 rounded text-sm">@myhazardprofile/core</code>.
+            <code className="bg-gray-100 px-2 py-0.5 rounded text-sm">@hazura/core</code>.
             You can integrate it into your own applications, extend it with custom data providers,
             or contribute improvements.
           </p>

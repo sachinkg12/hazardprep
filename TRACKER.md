@@ -19,7 +19,7 @@
 ## Phase 2: Web Dashboard — COMPLETE
 - [x] Create Next.js app (`apps/web`)
 - [x] Landing page with address input + example addresses
-- [x] API route wrapping `@myhazardprofile/core`
+- [x] API route wrapping `@hazura/core`
 - [x] Risk profile results page (composite score, per-hazard breakdown)
 - [x] Interactive map with hazard zone visualization (Leaflet + OpenStreetMap)
 - [x] Risk gauge / chart components (circular gauge + score bars)
@@ -45,7 +45,7 @@
 
 ## Phase 5: Credibility & Publishing (P2 — what builds your EB-1A case) — PARTIAL
 - [x] Methodology page (`/about`) with scoring algorithm, weights, data sources, limitations
-- [ ] Publish `@myhazardprofile/core` to npm
+- [ ] Publish `@hazura/core` to npm
 - [x] Add README badges (CI status, npm version, license)
 - [ ] Write methodology blog post / arXiv preprint
   - Title: "Hazura: Multi-Hazard Personal Risk Assessment Using Federated Government Open Data"
