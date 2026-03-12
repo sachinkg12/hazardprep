@@ -1,9 +1,9 @@
-# Hazura
+# HazardPrep
 
 Multi-hazard personal risk assessment engine + web dashboard for any US address.
 
 ## Project Structure
-- `packages/core/` — `@hazura/core` standalone npm library (scoring engine)
+- `packages/core/` — `@hazardprep/core` standalone npm library (scoring engine)
 - `apps/web/` — Next.js web dashboard
 - `TRACKER.md` — Project roadmap and progress tracker. **Always consult and update this file when completing tasks.**
 

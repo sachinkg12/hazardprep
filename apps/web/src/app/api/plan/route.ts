@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { HazardScorer, PlanGenerator } from '@hazura/core';
-import type { HouseholdProfile } from '@hazura/core';
+import { HazardScorer, PlanGenerator } from '@hazardprep/core';
+import type { HouseholdProfile } from '@hazardprep/core';
 
 const scorer = new HazardScorer();
 const planGenerator = new PlanGenerator();

@@ -104,7 +104,7 @@ function PlanQuiz() {
 
       const data = await res.json();
       // Store in sessionStorage and navigate
-      sessionStorage.setItem('hazura-plan', JSON.stringify(data));
+      sessionStorage.setItem('hazardprep-plan', JSON.stringify(data));
       router.push('/plan/results');
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Something went wrong');

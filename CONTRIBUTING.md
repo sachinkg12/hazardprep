@@ -1,4 +1,4 @@
-# Contributing to Hazura
+# Contributing to HazardPrep
 
 Thank you for your interest in contributing! This project aims to help people understand and prepare for natural hazard risks.
 
@@ -6,8 +6,8 @@ Thank you for your interest in contributing! This project aims to help people un
 
 ```bash
 # Clone the repo
-git clone https://github.com/sachinkg12/hazura.git
-cd hazura
+git clone https://github.com/sachinkg12/hazardprep.git
+cd hazardprep
 
 # Install dependencies
 pnpm install

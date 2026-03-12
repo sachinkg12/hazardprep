@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { HazardScorer } from '@hazura/core';
+import { HazardScorer } from '@hazardprep/core';
 
 const scorer = new HazardScorer();
 

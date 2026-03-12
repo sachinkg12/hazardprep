@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  transpilePackages: ['@hazura/core'],
+  transpilePackages: ['@hazardprep/core'],
 };
 
 export default nextConfig;

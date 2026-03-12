@@ -3,8 +3,8 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: {
-    default: 'Hazura — Know Your Risk. Be Prepared.',
-    template: '%s | Hazura',
+    default: 'HazardPrep — Know Your Risk. Be Prepared.',
+    template: '%s | HazardPrep',
   },
   description:
     'Free multi-hazard risk assessment for any US address. Combines FEMA, USGS, and NOAA data into a personalized risk dashboard.',
@@ -24,15 +24,15 @@ export const metadata: Metadata = {
   },
   authors: [{ name: 'Sachin Gupta' }],
   openGraph: {
-    title: 'Hazura — Know Your Risk. Be Prepared.',
+    title: 'HazardPrep — Know Your Risk. Be Prepared.',
     description:
       'Enter any US address to see your personalized multi-hazard risk score. Free, open-source, powered by federal data.',
     type: 'website',
-    siteName: 'Hazura',
+    siteName: 'HazardPrep',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Hazura',
+    title: 'HazardPrep',
     description: 'Enter your address. Know your natural disaster risk. Get prepared.',
   },
 };

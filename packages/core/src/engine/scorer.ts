@@ -31,7 +31,7 @@ export interface ScorerOptions {
 }
 
 /**
- * Main entry point for the Hazura scoring engine.
+ * Main entry point for the HazardPrep scoring engine.
  *
  * @example
  * ```typescript

@@ -23,7 +23,7 @@ importers:
 
   apps/web:
     dependencies:
-      '@hazura/core':
+      '@hazardprep/core':
         specifier: workspace:*
         version: link:../../packages/core
       leaflet:

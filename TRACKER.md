@@ -1,4 +1,4 @@
-# Hazura — Project Tracker
+# HazardPrep — Project Tracker
 
 ## Phase 1: Core Engine (Scaffold) — COMPLETE
 - [x] Initialize monorepo (pnpm + Turborepo)
@@ -19,7 +19,7 @@
 ## Phase 2: Web Dashboard — COMPLETE
 - [x] Create Next.js app (`apps/web`)
 - [x] Landing page with address input + example addresses
-- [x] API route wrapping `@hazura/core`
+- [x] API route wrapping `@hazardprep/core`
 - [x] Risk profile results page (composite score, per-hazard breakdown)
 - [x] Interactive map with hazard zone visualization (Leaflet + OpenStreetMap)
 - [x] Risk gauge / chart components (circular gauge + score bars)
@@ -27,7 +27,7 @@
 - [x] Mobile-responsive design (Tailwind CSS)
 
 ## Phase 3: Launch Readiness (P0 — do before going public) — PARTIAL
-- [x] Create GitHub repo and push code — https://github.com/sachinkg12/Hazura
+- [x] Create GitHub repo and push code — https://github.com/sachinkg12/hazardprep
 - [x] Switch license to Apache 2.0 (patent grant, trademark protection)
 - [ ] Deploy to Vercel (live URL)
 - [x] Add error boundary (`error.tsx`) + custom not-found page
@@ -45,10 +45,10 @@
 
 ## Phase 5: Credibility & Publishing (P2 — what builds your EB-1A case) — PARTIAL
 - [x] Methodology page (`/about`) with scoring algorithm, weights, data sources, limitations
-- [ ] Publish `@hazura/core` to npm
+- [ ] Publish `@hazardprep/core` to npm
 - [x] Add README badges (CI status, npm version, license)
 - [ ] Write methodology blog post / arXiv preprint
-  - Title: "Hazura: Multi-Hazard Personal Risk Assessment Using Federated Government Open Data"
+  - Title: "HazardPrep: Multi-Hazard Personal Risk Assessment Using Federated Government Open Data"
   - Venues: CHI, CSCW, ACM COMPASS, Natural Hazards journal
 
 ## Phase 5.5: Personalized Prep Plans — COMPLETE

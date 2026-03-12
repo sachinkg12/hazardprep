@@ -1,5 +1,5 @@
 {
-  "name": "@hazura/core",
+  "name": "@hazardprep/core",
   "version": "0.1.0",
   "description": "Multi-hazard personal risk assessment engine using federal open data (FEMA, USGS, NOAA)",
   "keywords": [
@@ -16,7 +16,7 @@
     "geospatial"
   ],
   "license": "Apache-2.0",
-  "author": "Hazura Contributors",
+  "author": "HazardPrep Contributors",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",

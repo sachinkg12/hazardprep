@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Methodology',
   description:
-    'How Hazura calculates composite risk scores using FEMA, USGS, NOAA, and NIFC data.',
+    'How HazardPrep calculates composite risk scores using FEMA, USGS, NOAA, and NIFC data.',
 };
 
 const DATA_SOURCES = [
@@ -111,7 +111,7 @@ export default function AboutPage() {
           </a>
           <h1 className="text-4xl font-bold mb-4">Methodology</h1>
           <p className="text-lg text-gray-600">
-            How Hazura calculates your personalized multi-hazard risk score.
+            How HazardPrep calculates your personalized multi-hazard risk score.
           </p>
         </div>
 
@@ -119,7 +119,7 @@ export default function AboutPage() {
         <section className="mb-12">
           <h2 className="text-2xl font-bold mb-4">Overview</h2>
           <p className="text-gray-700 leading-relaxed mb-4">
-            Hazura generates a composite risk score (0–100) for any US address by
+            HazardPrep generates a composite risk score (0–100) for any US address by
             combining data from four federal government sources. Each address is geocoded using
             the US Census Bureau API, then assessed across multiple hazard types simultaneously.
           </p>
@@ -223,7 +223,7 @@ export default function AboutPage() {
           <div className="mt-4 bg-blue-50 border border-blue-200 rounded-xl p-4">
             <h4 className="font-semibold text-sm text-blue-800 mb-2">Region-Aware Weights</h4>
             <p className="text-sm text-blue-700">
-              Hazura automatically adjusts weights based on your state&apos;s region.
+              HazardPrep automatically adjusts weights based on your state&apos;s region.
               For example, earthquake weight increases to 25% on the Pacific Coast,
               while hurricane weight increases to 25% on the Gulf Coast. This ensures
               the composite score reflects regionally relevant risks rather than
@@ -292,12 +292,12 @@ export default function AboutPage() {
           <h2 className="text-2xl font-bold mb-4">Open Source</h2>
           <p className="text-gray-700 leading-relaxed mb-4">
             The scoring engine is available as a standalone npm package:{' '}
-            <code className="bg-gray-100 px-2 py-0.5 rounded text-sm">@hazura/core</code>.
+            <code className="bg-gray-100 px-2 py-0.5 rounded text-sm">@hazardprep/core</code>.
             You can integrate it into your own applications, extend it with custom data providers,
             or contribute improvements.
           </p>
           <a
-            href="https://github.com/sachinkg12/Hazura"
+            href="https://github.com/sachinkg12/HazardPrep"
             className="inline-block px-6 py-3 bg-gray-900 text-white rounded-xl hover:bg-gray-800 font-semibold transition-colors"
           >
             View on GitHub
@@ -307,7 +307,7 @@ export default function AboutPage() {
 
       <footer className="border-t py-6 px-4 text-center text-sm text-gray-400">
         <p>
-          Hazura &middot; Open source &middot; Apache 2.0
+          HazardPrep &middot; Open source &middot; Apache 2.0
         </p>
       </footer>
     </main>

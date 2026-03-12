@@ -20,7 +20,7 @@ export function ShareButton({ address, score, level }: ShareButtonProps) {
     ? `${window.location.origin}/profile?address=${encodeURIComponent(address)}`
     : '';
 
-  const shareText = `My hazard risk score is ${score}/100 (${formatLevel(level)}) for ${address}. Check your risk at Hazura:`;
+  const shareText = `My hazard risk score is ${score}/100 (${formatLevel(level)}) for ${address}. Check your risk at HazardPrep:`;
 
   async function copyLink() {
     try {
@@ -62,7 +62,7 @@ export function ShareButton({ address, score, level }: ShareButtonProps) {
   async function shareNative() {
     if (navigator.share) {
       try {
-        await navigator.share({ title: 'Hazura', text: shareText, url: shareUrl });
+        await navigator.share({ title: 'HazardPrep', text: shareText, url: shareUrl });
       } catch {
         // User cancelled
       }

@@ -1,7 +1,7 @@
-# Hazura
+# HazardPrep
 
-[![CI](https://github.com/sachinkg12/hazura/actions/workflows/ci.yml/badge.svg)](https://github.com/sachinkg12/hazura/actions/workflows/ci.yml)
-[![npm](https://img.shields.io/npm/v/@hazura/core)](https://www.npmjs.com/package/@hazura/core)
+[![CI](https://github.com/sachinkg12/hazardprep/actions/workflows/ci.yml/badge.svg)](https://github.com/sachinkg12/hazardprep/actions/workflows/ci.yml)
+[![npm](https://img.shields.io/npm/v/@hazardprep/core)](https://www.npmjs.com/package/@hazardprep/core)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 
 **Know your risk. Be prepared.**
@@ -17,7 +17,7 @@ No single tool combines all natural hazard types — floods, earthquakes, wildfi
 - **Single-hazard** (USGS = earthquakes, NOAA = weather)
 - **Alerts only** (FEMA App — no comprehensive risk assessment)
 
-Hazura fills this gap.
+HazardPrep fills this gap.
 
 ## How It Works
 
@@ -42,11 +42,11 @@ Address Input → Geocoding → Parallel Data Fetch → Composite Scoring → Ri
 ### Use the Library
 
 ```bash
-npm install @hazura/core
+npm install @hazardprep/core
 ```
 
 ```typescript
-import { HazardScorer } from '@hazura/core';
+import { HazardScorer } from '@hazardprep/core';
 
 const scorer = new HazardScorer();
 const profile = await scorer.assess('742 Evergreen Terrace, Springfield, IL');
@@ -59,8 +59,8 @@ console.log(profile.recommendations);  // [{ title: 'Tornado Preparedness', ... 
 ### Run the Web Dashboard
 
 ```bash
-git clone https://github.com/sachinkg12/hazura.git
-cd hazura
+git clone https://github.com/sachinkg12/hazardprep.git
+cd hazardprep
 pnpm install
 pnpm dev
 ```
@@ -70,9 +70,9 @@ Open [http://localhost:3000](http://localhost:3000)
 ## Architecture
 
 ```
-hazura/
+hazardprep/
 ├── packages/
-│   └── core/           # @hazura/core — standalone scoring engine (npm)
+│   └── core/           # @hazardprep/core — standalone scoring engine (npm)
 ├── apps/
 │   └── web/            # Next.js dashboard — visual risk assessment
 └── docs/               # Methodology & architecture docs

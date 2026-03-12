@@ -1,5 +1,5 @@
 {
-  "name": "@hazura/web",
+  "name": "@hazardprep/web",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,7 +10,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@hazura/core": "workspace:*",
+    "@hazardprep/core": "workspace:*",
     "leaflet": "^1.9.4",
     "next": "^14.2.0",
     "react": "^18.3.0",

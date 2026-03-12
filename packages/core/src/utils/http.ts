@@ -23,7 +23,7 @@ export async function fetchJson<T>(url: string, options: FetchOptions = {}): Pro
         signal: controller.signal,
         headers: {
           Accept: 'application/json',
-          'User-Agent': 'Hazura/0.1.0 (https://github.com/sachinkg12/hazura)',
+          'User-Agent': 'HazardPrep/0.1.0 (https://github.com/sachinkg12/hazardprep)',
         },
       });
 

@@ -1,5 +1,5 @@
 {
-  "name": "hazura",
+  "name": "hazardprep",
   "private": true,
   "scripts": {
     "build": "turbo build",
