@@ -1,4 +1,4 @@
-# MyHazardProfile
+# Hazura
 
 Multi-hazard personal risk assessment engine + web dashboard for any US address.
 

@@ -1,4 +1,4 @@
-# MyHazardProfile — Project Tracker
+# Hazura — Project Tracker
 
 ## Phase 1: Core Engine (Scaffold) — COMPLETE
 - [x] Initialize monorepo (pnpm + Turborepo)
@@ -27,7 +27,7 @@
 - [x] Mobile-responsive design (Tailwind CSS)
 
 ## Phase 3: Launch Readiness (P0 — do before going public) — PARTIAL
-- [x] Create GitHub repo and push code — https://github.com/sachinkg12/MyHazardProfile
+- [x] Create GitHub repo and push code — https://github.com/sachinkg12/Hazura
 - [x] Switch license to Apache 2.0 (patent grant, trademark protection)
 - [ ] Deploy to Vercel (live URL)
 - [x] Add error boundary (`error.tsx`) + custom not-found page
@@ -48,7 +48,7 @@
 - [ ] Publish `@myhazardprofile/core` to npm
 - [x] Add README badges (CI status, npm version, license)
 - [ ] Write methodology blog post / arXiv preprint
-  - Title: "MyHazardProfile: Multi-Hazard Personal Risk Assessment Using Federated Government Open Data"
+  - Title: "Hazura: Multi-Hazard Personal Risk Assessment Using Federated Government Open Data"
   - Venues: CHI, CSCW, ACM COMPASS, Natural Hazards journal
 
 ## Phase 6: UX Polish (P3 — better experience) — COMPLETE

@@ -28,7 +28,7 @@ export interface ScorerOptions {
 }
 
 /**
- * Main entry point for the MyHazardProfile scoring engine.
+ * Main entry point for the Hazura scoring engine.
  *
  * @example
  * ```typescript

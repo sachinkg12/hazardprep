@@ -16,7 +16,7 @@
     "geospatial"
   ],
   "license": "Apache-2.0",
-  "author": "MyHazardProfile Contributors",
+  "author": "Hazura Contributors",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",

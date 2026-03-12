@@ -63,7 +63,7 @@ export async function GET(request: NextRequest) {
           }}
         >
           <div style={{ fontSize: '28px', fontWeight: 700, color: '#1f2937' }}>
-            MyHazardProfile
+            Hazura
           </div>
 
           {/* Score circle */}

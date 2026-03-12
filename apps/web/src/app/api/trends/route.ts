@@ -45,7 +45,7 @@ export async function POST(request: NextRequest) {
     const url = `https://www.fema.gov/api/open/v2/DisasterDeclarationsSummaries?$filter=${encodeURIComponent(filter)}&$select=incidentType,declarationDate&$orderby=declarationDate asc&$top=1000`;
 
     const res = await fetch(url, {
-      headers: { 'User-Agent': 'MyHazardProfile/1.0' },
+      headers: { 'User-Agent': 'Hazura/1.0' },
     });
     const data: FemaApiResponse = await res.json();
     const declarations = data.DisasterDeclarationsSummaries || [];

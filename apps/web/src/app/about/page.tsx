@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Methodology',
   description:
-    'How MyHazardProfile calculates composite risk scores using FEMA, USGS, NOAA, and NIFC data.',
+    'How Hazura calculates composite risk scores using FEMA, USGS, NOAA, and NIFC data.',
 };
 
 const DATA_SOURCES = [
@@ -111,7 +111,7 @@ export default function AboutPage() {
           </a>
           <h1 className="text-4xl font-bold mb-4">Methodology</h1>
           <p className="text-lg text-gray-600">
-            How MyHazardProfile calculates your personalized multi-hazard risk score.
+            How Hazura calculates your personalized multi-hazard risk score.
           </p>
         </div>
 
@@ -119,7 +119,7 @@ export default function AboutPage() {
         <section className="mb-12">
           <h2 className="text-2xl font-bold mb-4">Overview</h2>
           <p className="text-gray-700 leading-relaxed mb-4">
-            MyHazardProfile generates a composite risk score (0–100) for any US address by
+            Hazura generates a composite risk score (0–100) for any US address by
             combining data from four federal government sources. Each address is geocoded using
             the US Census Bureau API, then assessed across multiple hazard types simultaneously.
           </p>
@@ -285,7 +285,7 @@ export default function AboutPage() {
             or contribute improvements.
           </p>
           <a
-            href="https://github.com/sachinkg12/MyHazardProfile"
+            href="https://github.com/sachinkg12/Hazura"
             className="inline-block px-6 py-3 bg-gray-900 text-white rounded-xl hover:bg-gray-800 font-semibold transition-colors"
           >
             View on GitHub
@@ -295,7 +295,7 @@ export default function AboutPage() {
 
       <footer className="border-t py-6 px-4 text-center text-sm text-gray-400">
         <p>
-          MyHazardProfile &middot; Open source &middot; Apache 2.0
+          Hazura &middot; Open source &middot; Apache 2.0
         </p>
       </footer>
     </main>

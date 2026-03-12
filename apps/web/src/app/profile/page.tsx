@@ -92,7 +92,7 @@ function ProfileContent() {
         setProfile(data);
 
         // Update page title dynamically
-        document.title = `Risk Score: ${data.overallScore}/100 — ${data.location.address} | MyHazardProfile`;
+        document.title = `Risk Score: ${data.overallScore}/100 — ${data.location.address} | Hazura`;
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Something went wrong');
       } finally {
@@ -257,7 +257,7 @@ function ProfileContent() {
             Methodology
           </a>{' '}
           &middot;{' '}
-          <a href="https://github.com/sachinkg12/MyHazardProfile" className="underline hover:text-gray-600">
+          <a href="https://github.com/sachinkg12/Hazura" className="underline hover:text-gray-600">
             GitHub
           </a>{' '}
           &middot; Data from FEMA, USGS, NOAA, NIFC

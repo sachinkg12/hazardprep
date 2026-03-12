@@ -147,7 +147,7 @@ export default function HomePage() {
             Methodology
           </a>{' '}
           &middot;{' '}
-          <a href="https://github.com/sachinkg12/MyHazardProfile" className="underline hover:text-gray-600">
+          <a href="https://github.com/sachinkg12/hazura" className="underline hover:text-gray-600">
             GitHub
           </a>{' '}
           &middot; Apache 2.0

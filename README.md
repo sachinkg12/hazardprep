@@ -1,6 +1,6 @@
-# MyHazardProfile
+# Hazura
 
-[![CI](https://github.com/sachinkg12/MyHazardProfile/actions/workflows/ci.yml/badge.svg)](https://github.com/sachinkg12/MyHazardProfile/actions/workflows/ci.yml)
+[![CI](https://github.com/sachinkg12/hazura/actions/workflows/ci.yml/badge.svg)](https://github.com/sachinkg12/hazura/actions/workflows/ci.yml)
 [![npm](https://img.shields.io/npm/v/@myhazardprofile/core)](https://www.npmjs.com/package/@myhazardprofile/core)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 
@@ -17,7 +17,7 @@ No single tool combines all natural hazard types — floods, earthquakes, wildfi
 - **Single-hazard** (USGS = earthquakes, NOAA = weather)
 - **Alerts only** (FEMA App — no comprehensive risk assessment)
 
-MyHazardProfile fills this gap.
+Hazura fills this gap.
 
 ## How It Works
 
@@ -59,8 +59,8 @@ console.log(profile.recommendations);  // [{ title: 'Tornado Preparedness', ... 
 ### Run the Web Dashboard
 
 ```bash
-git clone https://github.com/sachinkg12/MyHazardProfile.git
-cd MyHazardProfile
+git clone https://github.com/sachinkg12/hazura.git
+cd hazura
 pnpm install
 pnpm dev
 ```
@@ -70,7 +70,7 @@ Open [http://localhost:3000](http://localhost:3000)
 ## Architecture
 
 ```
-MyHazardProfile/
+hazura/
 ├── packages/
 │   └── core/           # @myhazardprofile/core — standalone scoring engine (npm)
 ├── apps/
