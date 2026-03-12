@@ -86,7 +86,7 @@ export function ShareButton({ address, score, level }: ShareButtonProps) {
       {showMenu && (
         <>
           <div className="fixed inset-0 z-10" onClick={() => setShowMenu(false)} />
-          <div className="absolute right-0 top-full mt-2 w-56 bg-white rounded-xl shadow-lg border z-20 py-2">
+          <div className="absolute right-0 top-full mt-2 w-56 bg-white rounded-xl shadow-lg border z-20 py-2 text-gray-900">
             {'share' in navigator && (
               <button onClick={shareNative} className="w-full px-4 py-2.5 text-left text-sm hover:bg-gray-50 flex items-center gap-3">
                 <span className="text-lg">&#x1F4F1;</span> Share via...
