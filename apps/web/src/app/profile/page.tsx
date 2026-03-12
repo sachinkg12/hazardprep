@@ -7,6 +7,7 @@ import { HazardCard } from '@/components/HazardCard';
 import { HazardMap } from '@/components/HazardMap';
 import { Recommendations } from '@/components/Recommendations';
 import { ShareButton } from '@/components/ShareButton';
+import { ExportButtons } from '@/components/ExportButtons';
 
 interface HazardProfile {
   location: {
@@ -151,7 +152,10 @@ function ProfileContent() {
             >
               &larr; New Assessment
             </button>
-            <ShareButton address={location.address} score={overallScore} level={overallLevel} />
+            <div className="flex gap-2">
+              <ExportButtons profile={profile as unknown as Record<string, unknown>} />
+              <ShareButton address={location.address} score={overallScore} level={overallLevel} />
+            </div>
           </div>
 
           <div className="flex flex-col md:flex-row items-start md:items-center gap-8">
@@ -238,11 +242,15 @@ function ProfileContent() {
 
       <footer className="border-t py-6 px-4 text-center text-sm text-gray-400">
         <p>
+          <a href="/compare" className="underline hover:text-gray-600">
+            Compare Addresses
+          </a>{' '}
+          &middot;{' '}
           <a href="/about" className="underline hover:text-gray-600">
             Methodology
           </a>{' '}
           &middot;{' '}
-          <a href="https://github.com/myhazardprofile" className="underline hover:text-gray-600">
+          <a href="https://github.com/sachinkg12/MyHazardProfile" className="underline hover:text-gray-600">
             GitHub
           </a>{' '}
           &middot; Data from FEMA, USGS, NOAA, NIFC

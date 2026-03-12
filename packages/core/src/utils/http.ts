@@ -23,7 +23,7 @@ export async function fetchJson<T>(url: string, options: FetchOptions = {}): Pro
         signal: controller.signal,
         headers: {
           Accept: 'application/json',
-          'User-Agent': 'MyHazardProfile/0.1.0 (https://github.com/myhazardprofile)',
+          'User-Agent': 'MyHazardProfile/0.1.0 (https://github.com/sachinkg12/MyHazardProfile)',
         },
       });
 

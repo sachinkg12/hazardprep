@@ -1,5 +1,9 @@
 # MyHazardProfile
 
+[![CI](https://github.com/sachinkg12/MyHazardProfile/actions/workflows/ci.yml/badge.svg)](https://github.com/sachinkg12/MyHazardProfile/actions/workflows/ci.yml)
+[![npm](https://img.shields.io/npm/v/@myhazardprofile/core)](https://www.npmjs.com/package/@myhazardprofile/core)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 **Know your risk. Be prepared.**
 
 A free, open-source multi-hazard risk assessment tool for any US address. Combines federal open data from FEMA, USGS, and NOAA into a single personalized risk dashboard.
@@ -55,7 +59,7 @@ console.log(profile.recommendations);  // [{ title: 'Tornado Preparedness', ... 
 ### Run the Web Dashboard
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/MyHazardProfile.git
+git clone https://github.com/sachinkg12/MyHazardProfile.git
 cd MyHazardProfile
 pnpm install
 pnpm dev

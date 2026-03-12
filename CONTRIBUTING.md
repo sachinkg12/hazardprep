@@ -6,7 +6,7 @@ Thank you for your interest in contributing! This project aims to help people un
 
 ```bash
 # Clone the repo
-git clone https://github.com/YOUR_USERNAME/MyHazardProfile.git
+git clone https://github.com/sachinkg12/MyHazardProfile.git
 cd MyHazardProfile
 
 # Install dependencies

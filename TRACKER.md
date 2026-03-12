@@ -39,22 +39,22 @@
 - [x] Share buttons (Twitter, LinkedIn, Facebook, copy link, native share)
 - [x] Dynamic OG image API (`/api/og?address=...&score=...&level=...`)
 - [x] SEO meta tags (OpenGraph, Twitter card, keywords, author)
-- [ ] "Compare addresses" feature (side-by-side risk comparison)
-- [ ] Seasonal landing page banners (hurricane season, wildfire season, earthquake month)
+- [x] "Compare addresses" feature (`/compare` — side-by-side risk comparison)
+- [x] Seasonal landing page banners (hurricane, wildfire, tornado, winter storm seasons)
 
 ## Phase 5: Credibility & Publishing (P2 — what builds your EB-1A case) — PARTIAL
 - [x] Methodology page (`/about`) with scoring algorithm, weights, data sources, limitations
 - [ ] Publish `@myhazardprofile/core` to npm
-- [ ] Add README badges (CI status, npm version, license)
+- [x] Add README badges (CI status, npm version, license)
 - [ ] Write methodology blog post / arXiv preprint
   - Title: "MyHazardProfile: Multi-Hazard Personal Risk Assessment Using Federated Government Open Data"
   - Venues: CHI, CSCW, ACM COMPASS, Natural Hazards journal
 
 ## Phase 6: UX Polish (P3 — better experience) — PARTIAL
-- [ ] Address autocomplete (reduce failed geocoding)
+- [x] Address autocomplete (US Census Bureau geocoder suggestions)
 - [x] Accessibility: ARIA labels, form labels, roles on gauges and score bars
-- [ ] PDF report export ("Download My Risk Profile")
-- [ ] JSON export for researchers/developers
+- [x] PDF report export (print-to-PDF via browser)
+- [x] JSON export for researchers/developers
 - [x] Loading animation with data source indicator (instead of plain spinner)
 - [ ] Historical trend view (how has risk changed over years)
 

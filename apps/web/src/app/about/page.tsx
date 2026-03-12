@@ -245,7 +245,7 @@ export default function AboutPage() {
             or contribute improvements.
           </p>
           <a
-            href="https://github.com/myhazardprofile"
+            href="https://github.com/sachinkg12/MyHazardProfile"
             className="inline-block px-6 py-3 bg-gray-900 text-white rounded-xl hover:bg-gray-800 font-semibold transition-colors"
           >
             View on GitHub

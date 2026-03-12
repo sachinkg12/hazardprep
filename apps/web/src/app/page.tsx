@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { SeasonalBanner } from '@/components/SeasonalBanner';
+import { AddressInput } from '@/components/AddressInput';
 
 const EXAMPLE_ADDRESSES = [
   { label: 'San Francisco, CA', address: '1 Market St, San Francisco, CA 94105' },
@@ -28,6 +30,7 @@ export default function HomePage() {
 
   return (
     <main className="min-h-screen flex flex-col">
+      <SeasonalBanner />
       {/* Hero */}
       <div className="flex-1 flex flex-col items-center justify-center px-4 py-16">
         <div className="max-w-2xl w-full text-center">
@@ -45,17 +48,10 @@ export default function HomePage() {
           {/* Search Form */}
           <form onSubmit={handleSubmit} className="relative mb-6">
             <div className="flex gap-3">
-              <label htmlFor="address-input" className="sr-only">
-                US Address
-              </label>
-              <input
-                id="address-input"
-                type="text"
+              <AddressInput
                 value={address}
-                onChange={(e) => setAddress(e.target.value)}
-                placeholder="Enter a US address..."
-                aria-label="Enter a US street address for risk assessment"
-                className="flex-1 px-5 py-4 text-lg rounded-xl border-2 border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition-all"
+                onChange={setAddress}
+                onSubmit={() => handleSubmit({ preventDefault: () => {} } as React.FormEvent)}
               />
               <button
                 type="submit"
@@ -143,14 +139,18 @@ export default function HomePage() {
       {/* Footer */}
       <footer className="border-t py-6 px-4 text-center text-sm text-gray-400">
         <p>
+          <a href="/compare" className="underline hover:text-gray-600">
+            Compare Addresses
+          </a>{' '}
+          &middot;{' '}
           <a href="/about" className="underline hover:text-gray-600">
             Methodology
           </a>{' '}
           &middot;{' '}
-          <a href="https://github.com/myhazardprofile" className="underline hover:text-gray-600">
+          <a href="https://github.com/sachinkg12/MyHazardProfile" className="underline hover:text-gray-600">
             GitHub
           </a>{' '}
-          &middot; Open source &middot; MIT License
+          &middot; MIT License
         </p>
       </footer>
     </main>
