@@ -19,6 +19,9 @@ export const metadata: Metadata = {
     'FEMA',
     'risk assessment',
   ],
+  icons: {
+    icon: '/favicon.svg',
+  },
   authors: [{ name: 'Sachin Gupta' }],
   openGraph: {
     title: 'MyHazardProfile — Know Your Risk. Be Prepared.',
