@@ -62,10 +62,13 @@ export function HazardCard({ hazard }: { hazard: HazardScore }) {
   const icon = HAZARD_ICONS[hazard.type] || '\u26A0\uFE0F';
 
   return (
-    <div className={`rounded-xl border-2 p-5 ${getLevelColor(hazard.level)} transition-all hover:shadow-md`}>
+    <article
+      className={`rounded-xl border-2 p-5 ${getLevelColor(hazard.level)} transition-all hover:shadow-md`}
+      aria-label={`${formatType(hazard.type)} risk: ${hazard.score} out of 100`}
+    >
       <div className="flex items-start justify-between mb-3">
         <div className="flex items-center gap-3">
-          <span className="text-2xl">{icon}</span>
+          <span className="text-2xl" aria-hidden="true">{icon}</span>
           <div>
             <h3 className="font-semibold text-lg">{formatType(hazard.type)}</h3>
             <span className="text-xs text-gray-500">{hazard.source.name}</span>
@@ -78,7 +81,14 @@ export function HazardCard({ hazard }: { hazard: HazardScore }) {
       </div>
 
       {/* Score bar */}
-      <div className="w-full bg-gray-200 rounded-full h-2 mb-3">
+      <div
+        className="w-full bg-gray-200 rounded-full h-2 mb-3"
+        role="progressbar"
+        aria-valuenow={hazard.score}
+        aria-valuemin={0}
+        aria-valuemax={100}
+        aria-label={`${formatType(hazard.type)} risk score`}
+      >
         <div
           className={`h-2 rounded-full ${getBarColor(hazard.level)} transition-all duration-1000 ease-out`}
           style={{ width: `${hazard.score}%` }}
@@ -86,6 +96,6 @@ export function HazardCard({ hazard }: { hazard: HazardScore }) {
       </div>
 
       <p className="text-sm text-gray-600">{hazard.description}</p>
-    </div>
+    </article>
   );
 }

@@ -2,13 +2,35 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'MyHazardProfile — Know Your Risk. Be Prepared.',
+  title: {
+    default: 'MyHazardProfile — Know Your Risk. Be Prepared.',
+    template: '%s | MyHazardProfile',
+  },
   description:
     'Free multi-hazard risk assessment for any US address. Combines FEMA, USGS, and NOAA data into a personalized risk dashboard.',
+  keywords: [
+    'hazard risk',
+    'disaster preparedness',
+    'flood risk',
+    'earthquake risk',
+    'wildfire risk',
+    'hurricane risk',
+    'tornado risk',
+    'FEMA',
+    'risk assessment',
+  ],
+  authors: [{ name: 'Sachin Gupta' }],
   openGraph: {
+    title: 'MyHazardProfile — Know Your Risk. Be Prepared.',
+    description:
+      'Enter any US address to see your personalized multi-hazard risk score. Free, open-source, powered by federal data.',
+    type: 'website',
+    siteName: 'MyHazardProfile',
+  },
+  twitter: {
+    card: 'summary_large_image',
     title: 'MyHazardProfile',
     description: 'Enter your address. Know your natural disaster risk. Get prepared.',
-    type: 'website',
   },
 };
 

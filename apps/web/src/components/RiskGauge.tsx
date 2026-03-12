@@ -35,10 +35,24 @@ export function RiskGauge({ score, level, size = 'lg' }: RiskGaugeProps) {
   const svgSize = (radius + stroke) * 2;
   const circumference = 2 * Math.PI * radius;
   const progress = (score / 100) * circumference;
+  const label = getLevelLabel(level);
 
   return (
-    <div className="flex flex-col items-center">
-      <svg width={svgSize} height={svgSize} className="transform -rotate-90">
+    <div
+      className="flex flex-col items-center"
+      role="meter"
+      aria-valuenow={score}
+      aria-valuemin={0}
+      aria-valuemax={100}
+      aria-label={`Risk score: ${score} out of 100, ${label}`}
+    >
+      <svg
+        width={svgSize}
+        height={svgSize}
+        className="transform -rotate-90"
+        aria-hidden="true"
+      >
+        <title>{`Risk score ${score}/100 - ${label}`}</title>
         <circle
           cx={radius + stroke}
           cy={radius + stroke}
@@ -71,7 +85,7 @@ export function RiskGauge({ score, level, size = 'lg' }: RiskGaugeProps) {
           {score}
         </span>
         {isLarge && (
-          <span className="text-sm text-gray-500 mt-1">{getLevelLabel(level)}</span>
+          <span className="text-sm text-gray-500 mt-1">{label}</span>
         )}
       </div>
     </div>

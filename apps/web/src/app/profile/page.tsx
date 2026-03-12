@@ -1,11 +1,12 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useEffect, useState, Suspense } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { RiskGauge } from '@/components/RiskGauge';
 import { HazardCard } from '@/components/HazardCard';
 import { HazardMap } from '@/components/HazardMap';
 import { Recommendations } from '@/components/Recommendations';
+import { ShareButton } from '@/components/ShareButton';
 
 interface HazardProfile {
   location: {
@@ -56,26 +57,84 @@ function getLevelBg(level: string): string {
   }
 }
 
-export default function ProfilePage() {
+function ProfileContent() {
   const [profile, setProfile] = useState<HazardProfile | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const address = searchParams.get('address');
 
   useEffect(() => {
-    const stored = sessionStorage.getItem('hazardProfile');
-    if (!stored) {
+    if (!address) {
       router.push('/');
       return;
     }
-    setProfile(JSON.parse(stored));
-  }, [router]);
 
-  if (!profile) {
+    async function fetchProfile() {
+      setLoading(true);
+      setError('');
+      try {
+        const res = await fetch('/api/assess', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ address }),
+        });
+
+        if (!res.ok) {
+          const data = await res.json();
+          throw new Error(data.error || 'Assessment failed');
+        }
+
+        const data = await res.json();
+        setProfile(data);
+
+        // Update page title dynamically
+        document.title = `Risk Score: ${data.overallScore}/100 — ${data.location.address} | MyHazardProfile`;
+      } catch (err) {
+        setError(err instanceof Error ? err.message : 'Something went wrong');
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchProfile();
+  }, [address, router]);
+
+  if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-pulse text-gray-400">Loading profile...</div>
+      <div className="min-h-screen flex flex-col items-center justify-center gap-4">
+        <div className="relative">
+          <div className="w-20 h-20 border-4 border-gray-200 rounded-full" />
+          <div className="absolute top-0 left-0 w-20 h-20 border-4 border-blue-500 rounded-full border-t-transparent animate-spin" />
+        </div>
+        <div className="text-center">
+          <p className="text-lg font-medium text-gray-700">Analyzing hazard data...</p>
+          <p className="text-sm text-gray-400 mt-1">Querying FEMA, USGS, NOAA, and NIFC</p>
+        </div>
       </div>
     );
   }
+
+  if (error) {
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center gap-4 px-4">
+        <div className="max-w-md text-center">
+          <div className="text-5xl mb-4">&#x26A0;&#xFE0F;</div>
+          <h1 className="text-2xl font-bold mb-2">Assessment Failed</h1>
+          <p className="text-gray-600 mb-6">{error}</p>
+          <button
+            onClick={() => router.push('/')}
+            className="px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 font-semibold transition-colors"
+          >
+            Try Another Address
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  if (!profile) return null;
 
   const { location, overallScore, overallLevel, topRisks, recommendations, meta } = profile;
 
@@ -84,12 +143,16 @@ export default function ProfilePage() {
       {/* Header with overall score */}
       <header className={`bg-gradient-to-r ${getLevelBg(overallLevel)} text-white`}>
         <div className="max-w-5xl mx-auto px-4 py-10">
-          <button
-            onClick={() => router.push('/')}
-            className="text-white/80 hover:text-white text-sm mb-4 flex items-center gap-1"
-          >
-            &larr; New Assessment
-          </button>
+          <div className="flex items-center justify-between mb-4">
+            <button
+              onClick={() => router.push('/')}
+              className="text-white/80 hover:text-white text-sm flex items-center gap-1"
+              aria-label="Go back and assess a new address"
+            >
+              &larr; New Assessment
+            </button>
+            <ShareButton address={location.address} score={overallScore} level={overallLevel} />
+          </div>
 
           <div className="flex flex-col md:flex-row items-start md:items-center gap-8">
             <div className="flex-1">
@@ -162,7 +225,7 @@ export default function ProfilePage() {
             </div>
           )}
 
-          <div className="mt-6 text-center">
+          <div className="mt-6 flex flex-wrap gap-3 justify-center">
             <button
               onClick={() => router.push('/')}
               className="px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 font-semibold transition-colors"
@@ -175,7 +238,10 @@ export default function ProfilePage() {
 
       <footer className="border-t py-6 px-4 text-center text-sm text-gray-400">
         <p>
-          MyHazardProfile &middot; Open source &middot;{' '}
+          <a href="/about" className="underline hover:text-gray-600">
+            Methodology
+          </a>{' '}
+          &middot;{' '}
           <a href="https://github.com/myhazardprofile" className="underline hover:text-gray-600">
             GitHub
           </a>{' '}
@@ -183,5 +249,19 @@ export default function ProfilePage() {
         </p>
       </footer>
     </main>
+  );
+}
+
+export default function ProfilePage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen flex items-center justify-center">
+          <div className="animate-pulse text-gray-400">Loading...</div>
+        </div>
+      }
+    >
+      <ProfileContent />
+    </Suspense>
   );
 }

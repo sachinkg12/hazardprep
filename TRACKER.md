@@ -1,6 +1,6 @@
 # MyHazardProfile — Project Tracker
 
-## Phase 1: Core Engine (Scaffold)
+## Phase 1: Core Engine (Scaffold) — COMPLETE
 - [x] Initialize monorepo (pnpm + Turborepo)
 - [x] Define models: Location, HazardType, HazardScore, HazardProfile, DataProvider
 - [x] Implement BaseProvider with caching
@@ -16,7 +16,7 @@
 - [x] Issue templates (bug, feature, data source request)
 - [x] README, CONTRIBUTING, LICENSE (MIT)
 
-## Phase 2: Web Dashboard
+## Phase 2: Web Dashboard — COMPLETE
 - [x] Create Next.js app (`apps/web`)
 - [x] Landing page with address input + example addresses
 - [x] API route wrapping `@myhazardprofile/core`
@@ -25,30 +25,82 @@
 - [x] Risk gauge / chart components (circular gauge + score bars)
 - [x] Personalized preparation checklist with priority levels
 - [x] Mobile-responsive design (Tailwind CSS)
-- [ ] Deploy to Vercel
 
-## Phase 3: Polish & Publish
+## Phase 3: Launch Readiness (P0 — do before going public)
+- [ ] Create GitHub repo and push code
+- [ ] Deploy to Vercel (live URL)
+- [x] Add error boundary (`error.tsx`) + custom not-found page
+- [ ] Add rate limiting on `/api/assess` route — federal APIs will throttle without it
+- [x] Add OG image API (dynamic per-profile social preview cards)
+- [x] Make profile URL-based (`/profile?address=...`) — shareable links that survive refresh
+- [ ] Add favicon
+
+## Phase 4: Virality & Sharing (P1 — what makes it spread) — COMPLETE
+- [x] Share buttons (Twitter, LinkedIn, Facebook, copy link, native share)
+- [x] Dynamic OG image API (`/api/og?address=...&score=...&level=...`)
+- [x] SEO meta tags (OpenGraph, Twitter card, keywords, author)
+- [ ] "Compare addresses" feature (side-by-side risk comparison)
+- [ ] Seasonal landing page banners (hurricane season, wildfire season, earthquake month)
+
+## Phase 5: Credibility & Publishing (P2 — what builds your EB-1A case) — PARTIAL
+- [x] Methodology page (`/about`) with scoring algorithm, weights, data sources, limitations
 - [ ] Publish `@myhazardprofile/core` to npm
-- [ ] Create GitHub repo and push
-- [ ] Add badges to README (npm version, CI, license)
-- [ ] Core package standalone README with API docs
-- [ ] Add nearest shelter lookup feature
-- [ ] Add more providers (USDA Drought Monitor, NOAA historical storms)
-
-## Phase 4: EB-1A Traction
+- [ ] Add README badges (CI status, npm version, license)
 - [ ] Write methodology blog post / arXiv preprint
+  - Title: "MyHazardProfile: Multi-Hazard Personal Risk Assessment Using Federated Government Open Data"
+  - Venues: CHI, CSCW, ACM COMPASS, Natural Hazards journal
+
+## Phase 6: UX Polish (P3 — better experience) — PARTIAL
+- [ ] Address autocomplete (reduce failed geocoding)
+- [x] Accessibility: ARIA labels, form labels, roles on gauges and score bars
+- [ ] PDF report export ("Download My Risk Profile")
+- [ ] JSON export for researchers/developers
+- [x] Loading animation with data source indicator (instead of plain spinner)
+- [ ] Historical trend view (how has risk changed over years)
+
+## Phase 7: Depth & Data (P4 — richer scoring)
+- [ ] USDA Drought Monitor provider
+- [ ] NOAA historical severe storm provider (Storm Events Database)
+- [ ] FEMA National Flood Insurance Program (NFIP) claims data
+- [ ] USGS landslide susceptibility data
+- [ ] Nearest emergency shelter lookup (FEMA shelters API)
+- [ ] Insurance gap detection ("you're in a flood zone but may not have flood insurance")
+- [ ] Integration tests (core engine with mocked HTTP)
+- [ ] E2E tests (Playwright for web dashboard)
+
+## Phase 8: EB-1A Traction (P5 — evidence gathering)
 - [ ] Present at Code for America / SF Civic Tech meetup
-- [ ] Submit to CHI / CSCW / ACM COMPASS
-- [ ] Pitch to local TV news (seasonal hooks: hurricane/wildfire season)
-- [ ] Reach out to FEMA social media for amplification
-- [ ] Get partnership with a city emergency management office
-- [ ] Collect recommendation letters (emergency management directors, FEMA officials)
+- [ ] Submit paper to CHI / CSCW / ACM COMPASS
+- [ ] Pitch to local TV news (tie to seasonal disaster coverage)
+- [ ] Contact FEMA social media team for amplification
+- [ ] Partner with a city/county emergency management office
+- [ ] Reach out to Red Cross for endorsement
+- [ ] Collect recommendation letters:
+  - Emergency management directors
+  - FEMA officials
+  - Disaster preparedness researchers
+  - Red Cross leaders
+- [ ] Track GitHub stars, npm downloads, media mentions as evidence
 
 ## Data Sources Reference
-| Source | Agency | API | Key Required |
-|--------|--------|-----|--------------|
-| OpenFEMA | FEMA | https://www.fema.gov/api/open/v2/ | No |
-| Earthquake Hazards | USGS | https://earthquake.usgs.gov/fdsnws/event/1/ | No |
-| Weather API | NOAA/NWS | https://api.weather.gov/ | No |
-| NIFC Wildfire | NIFC | ArcGIS REST Services | No |
-| Census Geocoder | US Census | https://geocoding.geo.census.gov/ | No |
+
+| Source | Agency | API | Key Required | Status |
+|--------|--------|-----|--------------|--------|
+| OpenFEMA | FEMA | https://www.fema.gov/api/open/v2/ | No | Integrated |
+| Earthquake Hazards | USGS | https://earthquake.usgs.gov/fdsnws/event/1/ | No | Integrated |
+| Weather API | NOAA/NWS | https://api.weather.gov/ | No | Integrated |
+| NIFC Wildfire | NIFC | ArcGIS REST Services | No | Integrated |
+| Census Geocoder | US Census | https://geocoding.geo.census.gov/ | No | Integrated |
+| Drought Monitor | USDA | https://droughtmonitor.unl.edu/WebServiceInfo.aspx | No | Planned |
+| Storm Events | NOAA | https://www.ncei.noaa.gov/access/metadata/ | No | Planned |
+| NFIP Claims | FEMA | https://www.fema.gov/api/open/v2/ | No | Planned |
+| Shelters | FEMA | https://gis.fema.gov/arcgis/rest/services/ | No | Planned |
+
+## Key Metrics to Track (for EB-1A evidence)
+- [ ] GitHub stars count
+- [ ] npm weekly downloads
+- [ ] Unique visitors / monthly active users
+- [ ] Media mentions / press coverage
+- [ ] Academic citations
+- [ ] Government/NGO partnerships
+- [ ] Conference presentations

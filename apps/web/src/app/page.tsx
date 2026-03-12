@@ -12,38 +12,14 @@ const EXAMPLE_ADDRESSES = [
 
 export default function HomePage() {
   const [address, setAddress] = useState('');
-  const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const router = useRouter();
 
-  async function handleSubmit(e: React.FormEvent) {
+  function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!address.trim()) return;
-
-    setLoading(true);
     setError('');
-
-    try {
-      const res = await fetch('/api/assess', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ address: address.trim() }),
-      });
-
-      if (!res.ok) {
-        const data = await res.json();
-        throw new Error(data.error || 'Assessment failed');
-      }
-
-      const profile = await res.json();
-      // Store in sessionStorage and navigate
-      sessionStorage.setItem('hazardProfile', JSON.stringify(profile));
-      router.push('/profile');
-    } catch (err) {
-      setError(err instanceof Error ? err.message : 'Something went wrong');
-    } finally {
-      setLoading(false);
-    }
+    router.push(`/profile?address=${encodeURIComponent(address.trim())}`);
   }
 
   function handleExample(addr: string) {
@@ -69,48 +45,31 @@ export default function HomePage() {
           {/* Search Form */}
           <form onSubmit={handleSubmit} className="relative mb-6">
             <div className="flex gap-3">
+              <label htmlFor="address-input" className="sr-only">
+                US Address
+              </label>
               <input
+                id="address-input"
                 type="text"
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
                 placeholder="Enter a US address..."
+                aria-label="Enter a US street address for risk assessment"
                 className="flex-1 px-5 py-4 text-lg rounded-xl border-2 border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition-all"
-                disabled={loading}
               />
               <button
                 type="submit"
-                disabled={loading || !address.trim()}
+                disabled={!address.trim()}
+                aria-label="Assess hazard risk for this address"
                 className="px-8 py-4 bg-blue-600 text-white text-lg font-semibold rounded-xl hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors whitespace-nowrap"
               >
-                {loading ? (
-                  <span className="flex items-center gap-2">
-                    <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
-                      <circle
-                        className="opacity-25"
-                        cx="12"
-                        cy="12"
-                        r="10"
-                        stroke="currentColor"
-                        strokeWidth="4"
-                        fill="none"
-                      />
-                      <path
-                        className="opacity-75"
-                        fill="currentColor"
-                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
-                      />
-                    </svg>
-                    Assessing...
-                  </span>
-                ) : (
-                  'Assess Risk'
-                )}
+                Assess Risk
               </button>
             </div>
           </form>
 
           {error && (
-            <div className="mb-6 p-4 bg-red-50 border border-red-200 text-red-700 rounded-xl">
+            <div className="mb-6 p-4 bg-red-50 border border-red-200 text-red-700 rounded-xl" role="alert">
               {error}
             </div>
           )}
@@ -184,11 +143,14 @@ export default function HomePage() {
       {/* Footer */}
       <footer className="border-t py-6 px-4 text-center text-sm text-gray-400">
         <p>
-          Open source &middot;{' '}
+          <a href="/about" className="underline hover:text-gray-600">
+            Methodology
+          </a>{' '}
+          &middot;{' '}
           <a href="https://github.com/myhazardprofile" className="underline hover:text-gray-600">
             GitHub
           </a>{' '}
-          &middot; MIT License
+          &middot; Open source &middot; MIT License
         </p>
       </footer>
     </main>
