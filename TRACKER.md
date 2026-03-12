@@ -51,6 +51,16 @@
   - Title: "Hazura: Multi-Hazard Personal Risk Assessment Using Federated Government Open Data"
   - Venues: CHI, CSCW, ACM COMPASS, Natural Hazards journal
 
+## Phase 5.5: Personalized Prep Plans — COMPLETE
+- [x] Household profile model (members, pets, medical needs, housing, transport)
+- [x] Plan generator engine (household-aware kit builder, action plans, maintenance)
+- [x] Region-aware hazard weights (8 US regions with auto-detection)
+- [x] Risk percentile context ("Higher risk than X% of US locations")
+- [x] Quiz UI with 4-step flow (address, household, medical, housing)
+- [x] Plan results page with interactive checklist, action plans, maintenance schedule
+- [x] PDF/print export for prep plans
+- [x] Connected from landing page CTA and profile page
+
 ## Phase 6: UX Polish (P3 — better experience) — COMPLETE
 - [x] Address autocomplete (US Census Bureau geocoder suggestions)
 - [x] Accessibility: ARIA labels, form labels, roles on gauges and score bars

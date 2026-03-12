@@ -252,9 +252,15 @@ function ProfileContent() {
           )}
 
           <div className="mt-6 flex flex-wrap gap-3 justify-center">
+            <a
+              href={`/plan?address=${encodeURIComponent(location.address)}`}
+              className="px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 font-semibold transition-colors"
+            >
+              Get Personalized Prep Plan
+            </a>
             <button
               onClick={() => router.push('/')}
-              className="px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 font-semibold transition-colors"
+              className="px-6 py-3 border-2 border-gray-200 rounded-xl hover:border-gray-400 font-semibold transition-colors"
             >
               Assess Another Address
             </button>

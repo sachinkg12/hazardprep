@@ -86,6 +86,24 @@ export default function HomePage() {
         </div>
       </div>
 
+      {/* Prep Plan CTA */}
+      <section className="bg-blue-600 text-white py-12 px-4">
+        <div className="max-w-2xl mx-auto text-center">
+          <p className="text-blue-200 text-sm font-medium uppercase tracking-wider mb-2">New Feature</p>
+          <h2 className="text-3xl font-bold mb-3">Get Your Personalized Prep Plan</h2>
+          <p className="text-blue-100 mb-6">
+            Tell us about your household — family size, pets, medical needs — and get a
+            customized emergency kit checklist and action plans in under 2 minutes.
+          </p>
+          <a
+            href="/plan"
+            className="inline-block px-8 py-4 bg-white text-blue-600 font-bold rounded-xl hover:bg-blue-50 transition-colors text-lg"
+          >
+            Get My Plan
+          </a>
+        </div>
+      </section>
+
       {/* How it works */}
       <section className="bg-white border-t py-16 px-4">
         <div className="max-w-4xl mx-auto">
@@ -139,6 +157,10 @@ export default function HomePage() {
       {/* Footer */}
       <footer className="border-t py-6 px-4 text-center text-sm text-gray-400">
         <p>
+          <a href="/plan" className="underline hover:text-gray-600">
+            Prep Plan
+          </a>{' '}
+          &middot;{' '}
           <a href="/compare" className="underline hover:text-gray-600">
             Compare Addresses
           </a>{' '}
